@@ -9,7 +9,7 @@ import Profile from './components/profile'
 import Sticky from 'react-stickynode'
 import Widget from './components/Widget';
 import { useStateValue } from './StateProvider';
-import {BrowserRouter as Router,Route,Link} from 'react-router-dom'
+import {BrowserRouter as Router,Route,Link, Switch} from 'react-router-dom'
 import Routes from './route'
 import Curriculam from './components/Curriculam'
 
@@ -28,16 +28,40 @@ function App() {
         ) : (
 
           <>
+      <Switch>
+      <Route path = "/login">
+          <Login/>
+      </Route>
+      <Route path = "/Curriculam" >
+       <div className="app_body">
+         <Header/>  
+         <div id="sidebarclass"><Sidebar/></div>
+         <div id="curriculam"><Curriculam/></div> 
+         {/* <div className="profileclass"><Profile/></div> */}
+       </div>
+      </Route>
+      <Route path = '/profile'>
+       <div className="app_body">
+         <Header/>  
+         <div id="sidebarclass"><Sidebar/></div>
+         {/*<div id="curriculam"><Curriculam/></div>*/}
+         {/*<div id="feedid"><Feed/></div>*/}
+          <div className="profileclass"><Profile/></div> 
+       </div>
+      </Route>
+      <Route path = '/'>
+       <div className="app_body">
+         <Header/>  
+         <div id="sidebarclass"><Sidebar/></div>
+         {/*<div id="curriculam"><Curriculam/></div>*/}
+         <div id="feedid"><Feed/></div> 
+         {/* <div className="profileclass"><Profile/></div> */}
+       </div>
+      </Route>
 
-      <Header/>
-      <div className="app_body">
-      <div id="sidebarclass"><Sidebar/></div>
-      <div id="curriculam"><Curriculam/></div>
-      {/* <div id="feedid"><Feed/></div> */}
-      {/* <div className="profileclass"><Profile/></div> */}
-      </div>
+      </Switch> 
       </>
-
+     
     )}    
     </div>
     </Router>

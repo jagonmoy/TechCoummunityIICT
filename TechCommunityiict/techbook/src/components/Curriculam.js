@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import './Curriculam.css'
+import Header from './Header'
 
 
  

@@ -38,7 +38,7 @@ function Header () {
 
                 <div className="header_option header_option--active">
                     <HomeIcon fontSize='large'/>
-                    <h4>Home</h4>
+                    <h4><Link to ="/" style = { {textDecoration: 'none' , color: 'black'}}>Home</Link></h4>
                 </div>
 
                 <div className="header_option">
@@ -62,7 +62,7 @@ function Header () {
             <div className='header_right'>
                 <div className='header_info'>
                     <Avatar src={user.photoURL}/>
-                    <h4>{user.displayName}</h4>
+                    <h4><Link to ="/profile" style = { {textDecoration: 'none' , color: 'black'}}>{user.displayName}</Link></h4>
                 </div>
 
                 <IconButton>
@@ -74,9 +74,14 @@ function Header () {
                 <ForumIcon/>
                 </IconButton>
                 
-                <IconButton>
-                <ExpandMoreIcon/>
-                </IconButton>
+                <div className='header_info'>
+                    <h4><Link to ="/login" style = { {textDecoration: 'none' , color: 'black'}}>Sign Out</Link></h4>
+                    <IconButton>
+                    <ExpandMoreIcon/>
+                    </IconButton>
+                </div>
+                
+                
                 
 
 
